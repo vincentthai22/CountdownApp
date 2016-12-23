@@ -14,7 +14,7 @@ import CoreData
 extension CountdownManagedObject {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CountdownManagedObject> {
-        return NSFetchRequest<CountdownManagedObject>(entityName: "Countdown");
+        return NSFetchRequest<CountdownManagedObject>(entityName: "Countdown")
     }
     
     @NSManaged public var date: Date?

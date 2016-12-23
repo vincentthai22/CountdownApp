@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 @objc (CountdownManagedObject)
-
 public class CountdownManagedObject : NSManagedObject {
     
     override public func awakeFromInsert() {

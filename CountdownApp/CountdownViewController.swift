@@ -14,9 +14,17 @@ class CountdownViewController: UIViewController {
     let imageArray = [ #imageLiteral(resourceName: "Hotairballons"), #imageLiteral(resourceName: "butterfly-wallpaper"), #imageLiteral(resourceName: "alaska")]
     var pageIndex : Int?
     var titleText : String!
-    var imageName : String!
+    var imageData : NSData!
     
     @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    convenience init(pageIndex : Int, titleText : String, imageName : NSData ) {
+        self.init()
+        self.pageIndex = pageIndex
+        self.titleText = titleText
+        self.imageData = imageName
+        
+    }
     
     
     override func viewDidLoad() {
@@ -28,7 +36,12 @@ class CountdownViewController: UIViewController {
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(CountdownViewController.labelDragged) )
         floatingLabel.addGestureRecognizer(gesture)
         self.view.addSubview(floatingLabel)
-        self.backgroundImageView.image = imageArray[(Int(arc4random_uniform(UInt32(imageArray.count))))]
+        
+        if self.imageData != nil {
+            self.backgroundImageView.image = UIImage.init(data: self.imageData as Data)
+        } else {
+            self.backgroundImageView.image = imageArray[(Int(arc4random_uniform(UInt32(imageArray.count))))]
+        }
         
     }
     
@@ -38,4 +51,5 @@ class CountdownViewController: UIViewController {
         label?.center = CGPoint.init(x: (label?.center.x)! + translation.x, y: (label?.center.y)! + translation.y)
         gesture.setTranslation(CGPoint.zero, in: label)
     }
+    
 }
