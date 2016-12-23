@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0B95FB1E0A0094000F91B7 /* CountdownPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B95FA1E0A0094000F91B7 /* CountdownPageViewController.swift */; };
+		BF8E9FC01E0C5F1900AA4CD2 /* CountdownManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E9FBF1E0C5F1900AA4CD2 /* CountdownManagedObject.swift */; };
+		BF8E9FC21E0C5F4B00AA4CD2 /* CountdownManagedObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E9FC11E0C5F4B00AA4CD2 /* CountdownManagedObject+CoreDataProperties.swift */; };
 		BF92EBB41E09BE8000246246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92EBB31E09BE8000246246 /* AppDelegate.swift */; };
-		BF92EBB61E09BE8000246246 /* CountdownPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92EBB51E09BE8000246246 /* CountdownPageViewController.swift */; };
+		BF92EBB61E09BE8000246246 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92EBB51E09BE8000246246 /* test.swift */; };
 		BF92EBB91E09BE8000246246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF92EBB71E09BE8000246246 /* Main.storyboard */; };
 		BF92EBBC1E09BE8000246246 /* CountdownApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF92EBBA1E09BE8000246246 /* CountdownApp.xcdatamodeld */; };
 		BF92EBBE1E09BE8000246246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF92EBBD1E09BE8000246246 /* Assets.xcassets */; };
 		BF92EBC11E09BE8000246246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF92EBBF1E09BE8000246246 /* LaunchScreen.storyboard */; };
 		BF92EBCC1E09BE8000246246 /* CountdownAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92EBCB1E09BE8000246246 /* CountdownAppTests.swift */; };
 		BF92EBD71E09BE8100246246 /* CountdownAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92EBD61E09BE8100246246 /* CountdownAppUITests.swift */; };
+		BF92EBE51E09E41A00246246 /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92EBE41E09E41A00246246 /* CountdownViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF0B95FA1E0A0094000F91B7 /* CountdownPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownPageViewController.swift; sourceTree = "<group>"; };
+		BF8E9FBF1E0C5F1900AA4CD2 /* CountdownManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownManagedObject.swift; sourceTree = "<group>"; };
+		BF8E9FC11E0C5F4B00AA4CD2 /* CountdownManagedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CountdownManagedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BF92EBB01E09BE8000246246 /* CountdownApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountdownApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF92EBB31E09BE8000246246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF92EBB51E09BE8000246246 /* CountdownPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownPageViewController.swift; sourceTree = "<group>"; };
+		BF92EBB51E09BE8000246246 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		BF92EBB81E09BE8000246246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF92EBBB1E09BE8000246246 /* CountdownApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountdownApp.xcdatamodel; sourceTree = "<group>"; };
 		BF92EBBD1E09BE8000246246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +56,7 @@
 		BF92EBD21E09BE8100246246 /* CountdownAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF92EBD61E09BE8100246246 /* CountdownAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownAppUITests.swift; sourceTree = "<group>"; };
 		BF92EBD81E09BE8100246246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF92EBE41E09E41A00246246 /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +108,15 @@
 			isa = PBXGroup;
 			children = (
 				BF92EBB31E09BE8000246246 /* AppDelegate.swift */,
-				BF92EBB51E09BE8000246246 /* CountdownPageViewController.swift */,
+				BF0B95FA1E0A0094000F91B7 /* CountdownPageViewController.swift */,
+				BF92EBE41E09E41A00246246 /* CountdownViewController.swift */,
 				BF92EBB71E09BE8000246246 /* Main.storyboard */,
 				BF92EBBD1E09BE8000246246 /* Assets.xcassets */,
 				BF92EBBF1E09BE8000246246 /* LaunchScreen.storyboard */,
+				BF8E9FBF1E0C5F1900AA4CD2 /* CountdownManagedObject.swift */,
+				BF8E9FC11E0C5F4B00AA4CD2 /* CountdownManagedObject+CoreDataProperties.swift */,
 				BF92EBC21E09BE8000246246 /* Info.plist */,
+				BF92EBB51E09BE8000246246 /* test.swift */,
 				BF92EBBA1E09BE8000246246 /* CountdownApp.xcdatamodeld */,
 			);
 			path = CountdownApp;
@@ -262,9 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF92EBB61E09BE8000246246 /* CountdownPageViewController.swift in Sources */,
+				BF0B95FB1E0A0094000F91B7 /* CountdownPageViewController.swift in Sources */,
+				BF92EBE51E09E41A00246246 /* CountdownViewController.swift in Sources */,
+				BF8E9FC01E0C5F1900AA4CD2 /* CountdownManagedObject.swift in Sources */,
+				BF92EBB61E09BE8000246246 /* test.swift in Sources */,
 				BF92EBB41E09BE8000246246 /* AppDelegate.swift in Sources */,
 				BF92EBBC1E09BE8000246246 /* CountdownApp.xcdatamodeld in Sources */,
+				BF8E9FC21E0C5F4B00AA4CD2 /* CountdownManagedObject+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +525,7 @@
 				BF92EBDD1E09BE8100246246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF92EBDE1E09BE8100246246 /* Build configuration list for PBXNativeTarget "CountdownAppTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +534,7 @@
 				BF92EBE01E09BE8100246246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF92EBE11E09BE8100246246 /* Build configuration list for PBXNativeTarget "CountdownAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +543,7 @@
 				BF92EBE31E09BE8100246246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
