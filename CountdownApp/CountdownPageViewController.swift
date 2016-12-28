@@ -13,7 +13,7 @@ class CountdownPageViewController : UIViewController, UIPageViewControllerDataSo
     
     @IBOutlet weak var navItem: UINavigationItem!
     
-    let countdownCoreData = CountdownCoreData.init()
+    let countdownCoreData = CountdownCoreData.countdownCoreData
     
     //var pageTitles = [String]()
     let imageArray = [#imageLiteral(resourceName: "Hotairballons"), #imageLiteral(resourceName: "alaska"), #imageLiteral(resourceName: "butterfly-wallpaper")]
@@ -47,9 +47,8 @@ class CountdownPageViewController : UIViewController, UIPageViewControllerDataSo
             titleTextField.placeholder = "Enter the event name"
         }
         self.newCountdownAlertController.addTextField { (dateTextField) in
-            dateTextField.placeholder = "Enter date here"
+            dateTextField.placeholder = "Enter date here "
         }
-        
         let actionOK = UIAlertAction.init(title: "OK", style: .default, handler: {
             (action: UIAlertAction) in print("ok has been pressed")
             
@@ -64,6 +63,7 @@ class CountdownPageViewController : UIViewController, UIPageViewControllerDataSo
             self.pageViewController.setViewControllers([self.pageContentViewControllers[self.countDownArray.count - 1]], direction: .forward, animated: true, completion: nil)
             
             self.newCountdownAlertController.textFields?[0].text = ""
+            self.newCountdownAlertController.textFields?[1].text = ""
             self.prevIndex = self.pageContentViewControllers.count
             self.countdownCoreData.save()
             
@@ -106,16 +106,20 @@ class CountdownPageViewController : UIViewController, UIPageViewControllerDataSo
             self.pageContentViewControllers.append(self.viewControllerAtIndex(index: index) as! CountdownViewController)
             index += 1
         }
+        if(self.pageContentViewControllers.count > 0){
+            self.pageViewController.setViewControllers([self.pageContentViewControllers[0]], direction: .forward, animated: true, completion: nil)
+        }
         
     }
-    
     func delBarButtonHandler(){
         var index = 0
         if currentIndex! > 0 && self.currentIndex! < self.countDownArray.count {
             
+            self.countdownCoreData.delete(countdownEvent: self.countDownArray[self.currentIndex!])
             self.countDownArray.remove(at: self.currentIndex!)
             self.pageContentViewControllers.remove(at: self.currentIndex!)
-            self.pageViewController.setViewControllers([self.pageContentViewControllers[0]], direction: .reverse, animated: true, completion: nil)
+            self.pageViewController.setViewControllers([self.pageContentViewControllers[self.currentIndex! - 1]], direction: .reverse, animated: true, completion: nil)
+            self.navItem.title = self.pageContentViewControllers[self.currentIndex! - 1].titleText
             self.countdownCoreData.save()
             for viewController in self.pageContentViewControllers {
                 if index >= self.currentIndex! {
@@ -188,9 +192,9 @@ class CountdownPageViewController : UIViewController, UIPageViewControllerDataSo
         
         if completed {
             
-            print("completed! \(self.prevIndex) \t \((previousViewControllers[0] as! CountdownViewController).pageIndex) \t \(isTraversingRight)")
+            //print("completed! \(self.prevIndex) \t \((previousViewControllers[0] as! CountdownViewController).pageIndex) \t \(isTraversingRight)")
             var index = (previousViewControllers[0] as! CountdownViewController).pageIndex
-            
+            print("previous view controllers size is \(previousViewControllers.count)")
             if index == self.pageContentViewControllers.count - 1  {
                 
                 isTraversingRight = false
@@ -208,7 +212,7 @@ class CountdownPageViewController : UIViewController, UIPageViewControllerDataSo
                 isTraversingRight = true
             }
             
-            print("completed! \(self.prevIndex) \t \((previousViewControllers[0] as! CountdownViewController).pageIndex) \t \(isTraversingRight)")
+            //print("completed! \(self.prevIndex) \t \((previousViewControllers[0] as! CountdownViewController).pageIndex) \t \(isTraversingRight)")
             
             self.prevIndex = index
             
@@ -237,7 +241,8 @@ class CountdownPageViewController : UIViewController, UIPageViewControllerDataSo
         
         
         let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as! CountdownViewController
-    
+        
+        pageContentViewController.countdownEvent = self.countDownArray[index]
         pageContentViewController.imageData = self.countDownArray[index].imageData
         pageContentViewController.titleText = self.countDownArray[index].title
         pageContentViewController.pageIndex = index
@@ -247,7 +252,7 @@ class CountdownPageViewController : UIViewController, UIPageViewControllerDataSo
     }
     
     private func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return countDownArray.count
+        return self.countDownArray.count
     }
     
     private func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
